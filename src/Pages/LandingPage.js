@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+
 const LandingPage = ({ auth }) => {
   const { login } = auth
   return (
@@ -15,4 +16,4 @@ const LandingPage = ({ auth }) => {
 LandingPage.propTypes = {
   auth: PropTypes.func.isRequired,
 }
-export default HomePage
+export default LandingPage;

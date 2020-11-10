@@ -1,7 +1,7 @@
 import React from 'react';
-import LandingPage from '../components/Pages/LandingPage';
+import LandingPage from '../Pages/LandingPage';
 import { Route, Switch, useHistory } from 'react-router-dom'
-import Error from '../components/Pages/ErrorPage'
+import Error from '../Pages/ErrorPage'
 import Auth from '../Auth/auth'
 
 function App() {
