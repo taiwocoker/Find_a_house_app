@@ -22,7 +22,7 @@ export default function Auth(historyValue) {
     auth.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
         setSession(authResult)
-        history.push('/car-list')
+        history.push('/House-list')
       } else if (err) {
         history.push('/error')
         throw new Error(err)
