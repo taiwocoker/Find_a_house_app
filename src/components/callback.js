@@ -7,7 +7,7 @@ function Callback({ auth }) {
     if (/access_token|id_token|error/.test(location.hash)) {
       auth.handleAuthentication()
     }
-  }, [location])
+  }, [location,auth])
   return <h1>Loading...</h1>
 }
 Callback.defaultProps = {

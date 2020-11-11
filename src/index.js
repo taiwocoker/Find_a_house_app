@@ -6,13 +6,13 @@ import rootReducer  from './Reducer'
 import { createStore, applyMiddleware } from 'redux'
 import './index.css';
 import App from './components/App';
-import {thunk} from 'redux-thunk';
+import thunk from 'redux-thunk';
 
-initialState = {
+const initialState = {
   houses: [],
   loading: true,
   house: {},
-  user: {},
+  User: {},
   favourite: [],
 };
 
