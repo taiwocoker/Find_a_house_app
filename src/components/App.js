@@ -3,7 +3,8 @@ import LandingPage from '../Pages/LandingPage';
 import { Route, Switch, useHistory } from 'react-router-dom'
 import Error from '../Pages/ErrorPage'
 import Auth from '../Auth/auth'
-import Navbar from '../components/Navbar'
+import Callback from './callback'
+import Navbar from './Navbar'
 import HouseList from '../containers/HouseList'
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Navbar auth={auth} />
       <Switch>
         <Route path='/' exact render={() => <LandingPage auth={auth} />} />
+        <Route path='/callback' render={() => <Callback auth={auth} />} />
         <Route
           path='/House-list'
           // eslint-disable-next-line no-confusing-arrow
