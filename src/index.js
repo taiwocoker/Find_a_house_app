@@ -11,7 +11,7 @@ import thunk from 'redux-thunk';
 const initialState = {
   Houses: [],
   loading: true,
-  house: {},
+  House: {},
   User: {},
   favourite: [],
 };
