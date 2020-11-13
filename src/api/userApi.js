@@ -1,4 +1,6 @@
 import { handleResponse, handleError } from './apiUtils'
+import { toast } from 'react-toastify'
+
 const baseUrl = `${process.env.REACT_APP_SERVER_API_URL}/users`
 const createFavouriteUrl = `${process.env.REACT_APP_SERVER_API_URL}/favourites`
 
