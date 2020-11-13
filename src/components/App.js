@@ -6,6 +6,7 @@ import Auth from '../Auth/auth'
 import Callback from './callback'
 import Navbar from './Navbar'
 import HouseList from '../containers/HouseList'
+import HousePage from '../components/House'
 
 function App() {
   const history = useHistory()
@@ -21,6 +22,13 @@ function App() {
           // eslint-disable-next-line no-confusing-arrow
           render={() =>
             auth.isAuthenticated() ? <HouseList auth={auth} /> : auth.login()
+          }
+        />
+        <Route
+          path='/house/:id'
+          // eslint-disable-next-line no-confusing-arrow
+          render={() =>
+            auth.isAuthenticated() ? <HousePage auth={auth} /> : auth.login()
           }
         />
         <Route component={Error} />
