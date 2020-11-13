@@ -7,6 +7,8 @@ import Callback from './callback'
 import Navbar from './Navbar'
 import HouseList from '../containers/HouseList'
 import HousePage from '../components/House'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const history = useHistory()
@@ -33,6 +35,7 @@ function App() {
         />
         <Route component={Error} />
       </Switch>
+      <ToastContainer autoClose={3000} hideProgressBar />
     </>
   )
 
