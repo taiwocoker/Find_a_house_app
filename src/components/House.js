@@ -3,7 +3,8 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { useParams, Link } from 'react-router-dom'
 import { loadHouse, loadHouseSuccess } from '../actions/houseAction'
-const HousePage = ({ House, loadHouse, loadHouseSuccess, auth }) => {
+import {createFavourite} from '../api/userApi'
+const HousePage = ({ House, loadHouse, loadHouseSuccess, auth, User }) => {
   const { id } = useParams()
   const loadHousePageDetails = () => {
     const token = auth.getAccessToken()
@@ -26,19 +27,29 @@ const HousePage = ({ House, loadHouse, loadHouseSuccess, auth }) => {
         alt='house'
       />
       <p>{description}</p>
+      <button
+        type='button'
+        onClick={() =>
+          createFavourite(User.id, House.id, auth.getAccessToken())
+        }
+      >
+        Add to Favourites
+      </button>
     </section>
   )
 }
 HousePage.defaultProps = {
   House: null,
   auth: null,
+  User: null,
 }
 HousePage.propTypes = {
   House: PropTypes.object || null,
   auth: PropTypes.object || null,
+  User: PropTypes.object || null,
   loadHouse: PropTypes.func.isRequired,
   loadHouseSuccess: PropTypes.func.isRequired,
 }
-const mapStateToProps = ({ House }) => ({ House })
+const mapStateToProps = ({ House, User }) => ({ House, User })
 const mapDispatchToProps = { loadHouse, loadHouseSuccess }
 export default connect(mapStateToProps, mapDispatchToProps)(HousePage)
