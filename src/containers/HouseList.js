@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { loadHouses } from '../actions/housesAction';
+import { Link } from 'react-router-dom'
+
 const HouseList = ({ auth, Houses, loadHouses }) => {
   const loadApplicationHouses = () => {
     const token = auth.getAccessToken();
@@ -19,17 +21,23 @@ const HouseList = ({ auth, Houses, loadHouses }) => {
   }
   return (
     <>
-      <section className="section">
-        {Houses.map(house => (
-          <div className="meals-center" key={house.id}>
-            <img src={`${process.env.REACT_APP_SERVER_BLOB_PATH}${house.img_url}`} alt="house" />
+      <section className='section'>
+        {Houses.map((house) => (
+          <div className='meals-center' key={house.id}>
+            <img
+              src={`${process.env.REACT_APP_SERVER_BLOB_PATH}${house.img_url}`}
+              alt='house'
+            />
             <p>{house.name}</p>
             <p>{house.description}</p>
+            <Link to={`/house/${house.id}`} className='btn btn-primary btn-details'>
+              Details
+            </Link>
           </div>
         ))}
       </section>
     </>
-  );
+  )
 };
 HouseList.defaultProps = {
   auth: null,
