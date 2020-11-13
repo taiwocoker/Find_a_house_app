@@ -9,7 +9,7 @@ import App from './components/App';
 import thunk from 'redux-thunk';
 
 const initialState = {
-  houses: [],
+  Houses: [],
   loading: true,
   house: {},
   User: {},
