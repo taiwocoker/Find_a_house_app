@@ -7,6 +7,7 @@ import Callback from './callback'
 import Navbar from './Navbar'
 import HouseList from '../containers/HouseList'
 import HousePage from '../components/House'
+import FavouriteList from '../containers/Favouritelist'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -20,7 +21,7 @@ function App() {
         <Route path='/' exact render={() => <LandingPage auth={auth} />} />
         <Route path='/callback' render={() => <Callback auth={auth} />} />
         <Route
-          path='/House-list'
+          path='/house-list'
           // eslint-disable-next-line no-confusing-arrow
           render={() =>
             auth.isAuthenticated() ? <HouseList auth={auth} /> : auth.login()
@@ -31,6 +32,13 @@ function App() {
           // eslint-disable-next-line no-confusing-arrow
           render={() =>
             auth.isAuthenticated() ? <HousePage auth={auth} /> : auth.login()
+          }
+        />
+        <Route
+          path='/favourite-list'
+          // eslint-disable-next-line no-confusing-arrow
+          render={() =>
+            auth.isAuthenticated() ? <FavouriteList auth={auth} /> : auth.login()
           }
         />
         <Route component={Error} />
