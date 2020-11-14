@@ -25,25 +25,25 @@ const Navbar = ({ auth, User }) => {
         </button>
         <div className='collapse navbar-collapse' id='navbarNavAltMarkup'>
           <div className='navbar-nav ml-auto align-items-center'>
-            <Link to='/' className='nav-item nav-link li-color h4'>
+            <Link to='/' className='nav-item nav-link li-color'>
               Home <span className='sr-only'></span>
             </Link>
             {isAuthenticated() && (
-              <Link to='/house-list' className='nav-item nav-link li-color h4'>
+              <Link to='/house-list' className='nav-item nav-link li-color'>
                 Houses
               </Link>
             )}
             {isAuthenticated() && (
               <Link
                 to='/favourite-list'
-                className='nav-item nav-link li-color h4'
+                className='nav-item nav-link li-color'
               >
                 Favourites
               </Link>
             )}
             <button
               type='button'
-              className='nav-item nav-link text-white btn-success h4'
+              className='nav-item nav-link text-white btn-success'
               onClick={isAuthenticated() ? logout : login}
             >
               {isAuthenticated() ? 'Log Out' : 'Log In'}
