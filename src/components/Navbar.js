@@ -1,8 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
-const Navbar = ({ auth }) => {
+import { connect } from 'react-redux'
+
+const Navbar = ({ auth, User }) => {
   const { isAuthenticated, login, logout } = auth
+  
   return (
     <nav>
       <ul>
@@ -11,7 +14,12 @@ const Navbar = ({ auth }) => {
         </li>
         {isAuthenticated() && (
           <li>
-            <Link to='/House-list'>Houses</Link>
+            <Link to='/house-list'>Houses</Link>
+          </li>
+        )}
+        {isAuthenticated() && (
+          <li>
+            <Link to='/favourite-list'>Favourites</Link>
           </li>
         )}
         <li>
@@ -25,5 +33,7 @@ const Navbar = ({ auth }) => {
 }
 Navbar.propTypes = {
   auth: PropTypes.func.isRequired,
+  
 }
-export default Navbar
+const mapStateToProps = ({ User }) => ({ User })
+export default connect(mapStateToProps)(Navbar)
