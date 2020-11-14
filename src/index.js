@@ -10,10 +10,10 @@ import thunk from 'redux-thunk';
 
 const initialState = {
   Houses: [],
-  loading: true,
+  Loading: false,
   House: {},
   User: {},
-  favourite: [],
+  Favourites: [],
 };
 
 
