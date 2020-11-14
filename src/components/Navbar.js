@@ -7,7 +7,7 @@ const Navbar = ({ auth, User }) => {
   const { isAuthenticated, login, logout } = auth
   
   return (
-    <header className=' align-items-center'>
+    <header className='fixed-top'>
       <nav className='navbar navbar-expand-lg navbar-light bg-secondary p-2 px-md-5'>
         <Link to='/' className='navbar-brand color'>
           FindIt
@@ -24,26 +24,26 @@ const Navbar = ({ auth, User }) => {
           <span className='navbar-toggler-icon'></span>
         </button>
         <div className='collapse navbar-collapse' id='navbarNavAltMarkup'>
-          <div className='navbar-nav ml-auto'>
-            <Link to='/' className='nav-item nav-link li-color h3'>
+          <div className='navbar-nav ml-auto align-items-center'>
+            <Link to='/' className='nav-item nav-link li-color h4'>
               Home <span className='sr-only'></span>
             </Link>
             {isAuthenticated() && (
-              <Link to='/house-list' className='nav-item nav-link li-color h3'>
+              <Link to='/house-list' className='nav-item nav-link li-color h4'>
                 Houses
               </Link>
             )}
             {isAuthenticated() && (
               <Link
                 to='/favourite-list'
-                className='nav-item nav-link li-color h3'
+                className='nav-item nav-link li-color h4'
               >
                 Favourites
               </Link>
             )}
             <button
               type='button'
-              className='nav-item nav-link text-white btn-success h3'
+              className='nav-item nav-link text-white btn-success h4'
               onClick={isAuthenticated() ? logout : login}
             >
               {isAuthenticated() ? 'Log Out' : 'Log In'}
@@ -56,7 +56,6 @@ const Navbar = ({ auth, User }) => {
 }
 Navbar.propTypes = {
   auth: PropTypes.func.isRequired,
-  
 }
 const mapStateToProps = ({ User }) => ({ User })
 export default connect(mapStateToProps)(Navbar)

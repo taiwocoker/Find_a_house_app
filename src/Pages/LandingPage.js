@@ -29,7 +29,7 @@ const LandingPage = ({ auth, loadUser, User }) => {
           <h1>Find your beautiful houses here</h1>
           <div />
           <p>A place to live!</p>
-          <Link to='/house-list' className='li-color p-4'>
+          <Link to='/house-list' className='li-color p-4 lin'>
             Check out our houses!
           </Link>
         </section>

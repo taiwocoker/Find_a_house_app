@@ -31,6 +31,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow-y: auto;
 }
 
 .banner {
@@ -55,6 +56,13 @@ body {
   font-size: 1.2rem;
   margin-bottom: 2rem;
 }
+
+.lin {
+  border: 1px solid;
+  text-decoration: none !important;
+}
+
+
 @media screen and (min-width: 576px) {
   .banner {
     padding: 2rem 3rem;
