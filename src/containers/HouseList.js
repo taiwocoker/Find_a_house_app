@@ -16,38 +16,60 @@ const HouseList = ({ auth, Houses, loadHouses }) => {
   }, []);
   if (!Houses) {
     return (
-      <h2 className="section-title">Try Again</h2>
+      <h2 classNameName="section-title">Try Again</h2>
     );
   }
   return (
     <>
       <section className='section'>
-        {Houses.map((house) => (
-          <div className='meals-center' key={house.id}>
-            <img
-              src={`${process.env.REACT_APP_SERVER_BLOB_PATH}${house.img_url}`}
-              alt='house'
-            />
-            <p>{house.name}</p>
-            <p>{house.description}</p>
-            <Link to={`/house/${house.id}`} className='btn btn-primary btn-details'>
-              Details
-            </Link>
+        <div className='main'>
+          <h1 className='my-3'>Our houses</h1>
+          <div />
+        </div>
+        <div className='container'>
+          <div className='row div-cards'>
+            {Houses.map((house) => (
+              <div className='card-group col-md-4 cards p-2'>
+                <div className='card' key={house.id}>
+                  <img
+                    className='card-img-top'
+                    src={`${process.env.REACT_APP_SERVER_BLOB_PATH}${house.img_url}`}
+                    alt='house'
+                  />
+                  <div className='card-body'>
+                    <h5 className='card-title'>{house.name}</h5>
+                    
+                  </div>
+                  <div className='card-footer'>
+                    <Link
+                      to={`/house/${house.id}`}
+                      className='btn li-color btn-details btn-success'
+                    >
+                      Details
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </section>
     </>
   )
 };
+
+
 HouseList.defaultProps = {
   auth: null,
   Houses: null,
 };
+
 HouseList.propTypes = {
   auth: PropTypes.object || null,
   Houses: PropTypes.arrayOf(PropTypes.object) || null,
   loadHouses: PropTypes.func.isRequired,
 };
+
 const mapStateToProps = ({ Houses }) => ({ Houses });
 const mapDispatchToProps = dispatch => ({
   loadHouses: token => dispatch(loadHouses(token)),
