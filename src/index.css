@@ -31,7 +31,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow-y: auto;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .banner {
@@ -43,10 +49,10 @@ body {
   text-transform: capitalize;
   letter-spacing: 3px;
 }
-.banner h1 {
+.banner h1, .main h1 {
   font-size: 2.5rem;
 }
-.banner div {
+.banner div, .main div {
   width: 10rem;
   height: 5px;
   background: #AF9A7D;
@@ -60,6 +66,16 @@ body {
 .lin {
   border: 1px solid;
   text-decoration: none !important;
+}
+
+.cards {
+  width: 25rem;
+
+}
+
+.div-cards {
+  display: flex;
+  justify-content: space-around;
 }
 
 

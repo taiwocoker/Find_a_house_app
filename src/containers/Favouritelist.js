@@ -16,19 +16,37 @@ const FavouriteList = ({ User, Favourites, auth, loadFavourites }) => {
   return (
     <>
       <section className='section'>
-        {Favourites.map((house) => (
-          <div className='meals-center' key={house.id}>
-            <img
-              src={`${process.env.REACT_APP_SERVER_BLOB_PATH}${house.img_url}`}
-              alt='house'
-            />
-            <p>{house.name}</p>
-            <p>{house.description}</p>
-            <Link to={`/house/${house.id}`} className='btn btn-primary btn-details'>
-              Details
-            </Link>
+        <div className='main'>
+          <h1 className='my-3'>Your Favourites</h1>
+          <div />
+        </div>
+        <div className='container'>
+          <div className='row div-cards'>
+            {Favourites.map((house) => (
+              <div className='card-group col-md-4 cards p-2'>
+                <div className='card' key={house.id}>
+                  <img
+                    className='card-img-top'
+                    src={`${process.env.REACT_APP_SERVER_BLOB_PATH}${house.img_url}`}
+                    alt='house'
+                  />
+                  <div className='card-body'>
+                    <h5 className='card-title'>{house.name}</h5>
+                    <p className='card-text'>{house.description}</p>
+                  </div>
+                  <div className='card-footer'>
+                    <Link
+                      to='/house-list'
+                      className='btn li-color btn-details btn-success'
+                    >
+                      Details
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </section>
     </>
   )
