@@ -11,17 +11,17 @@ An App where you can view and add favourite houses to a list.
 
 ## About this project
 
-This Application is built as a front end app consuming a Ruby on Rails [API](https://arcane-scrubland-62933.herokuapp.com/) separately deployed to Heroku. Authorization was from Auth0
+- This Application is built as a front end app consuming a Ruby on Rails [API](https://arcane-scrubland-62933.herokuapp.com/) separately deployed to Heroku. Authorization was from Auth0
 
 ## End Points
 
 POST
--/users - (create user account)
--/favourites - (create favourites)
+- /users - (create user account)
+- /favourites - (create favourites)
 
 GET
--/houses - (fetch all houses)
--/favourites - (fetch favourite houses)
+- /houses - (fetch all houses)
+- /favourites - (fetch favourite houses)
 
 ## Built With
 - ReactJs
@@ -36,13 +36,13 @@ GET
 - ES6 JavaScript.
 
 ## Live Demo
-For the full working application click [here](https://find-your-house.netlify.app/)
+- For the full working application click [here](https://find-your-house.netlify.app/)
 
 ## Installation
-To get a local copy up and running follow these simple example steps.
+- To get a local copy up and running follow these simple example steps.
 
 ### Setup
-Clone [this](https://github.com/taiwocoker/Find_a_house_app) repo
+-  Clone [this](https://github.com/taiwocoker/Find_a_house_app) repo
 
 ### Follow:
 1. cd into the project directory
@@ -58,20 +58,19 @@ Clone [this](https://github.com/taiwocoker/Find_a_house_app) repo
 - Twitter: [@twitterhandle](https://twitter.com/SelloCoker)
 - Linkedin: [linkedin](https://linkedin.com/in/taiwo-coker)
 
-
-
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!
+- Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/taiwocoker/Find_a_house_app/issues)
+- Feel free to check the [issues page](https://github.com/taiwocoker/Find_a_house_app/issues)
 
 ## Show your support
 
-Give a ⭐️ if you like this project!
+- Give a ⭐️ if you like this project!
 
 ## Acknowledgments
+- Microverse
 
-You can access all the design info (color, typography, layouts) in this [link](https://www.behance.net/gallery/37706679/Circle-(Landing-page-Dashboard-Mobile-App))
+- You can access all the design info (color, typography, layouts) in this [link](https://www.behance.net/gallery/37706679/Circle-(Landing-page-Dashboard-Mobile-App))
 
-Design idea by [Alexey savitskiy on Behance](https://www.behance.net/alexey_savitskiy)
+- Design idea by [Alexey savitskiy on Behance](https://www.behance.net/alexey_savitskiy)
