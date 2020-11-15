@@ -15,29 +15,44 @@ const HousePage = ({ House, loadHouse, loadHouseSuccess, auth, User }) => {
     loadHousePageDetails()
   }, [id])
   if (!House) return <h2 className='section-title'>No house to display</h2>
-  const { name, description } = House
+  const { name, description, img_url } = House
   return (
-    <section className='section meal-section'>
-      <Link to='/' className='btn btn-primary'>
-        Back home
-      </Link>
-      <h2 className='section-title'>{name}</h2>
-      <img
-        src={`${process.env.REACT_APP_SERVER_BLOB_PATH}${House.img_url}`}
-        alt='house'
-      />
-      <p>{description}</p>
-      <button
-        type='button'
-        onClick={() =>
-          createFavourite(User.id, House.id, auth.getAccessToken())
-        }
-      >
-        Add to Favourites
-      </button>
-    </section>
+    <>
+      <section className='heiht'>
+        <div className='main'>
+  <h1 className='my-3'>{name}</h1>
+          <div />
+        </div>
+        <div className='card text-center'>
+          <div className='card-header'></div>
+          <div className='container'>
+            <div className='row div-cards'>
+              <img className='card-img-top' src={img_url} alt='house' />
+              <div className='card-body'>
+                <p className='card-text p-4 h4'>{description}</p>
+                <button
+                  type='button'
+                  className='btn li-color btn-details btn-success m-3 p-2'
+                  onClick={() =>
+                    createFavourite(User.id, House.id, auth.getAccessToken())
+                  }
+                >
+                  Add to Favourites
+                </button>
+                <Link to='/' className='btn li-color btn-details btn-success m-3 p-2'>
+                  Back home
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   )
 }
+
+
+
 HousePage.defaultProps = {
   House: null,
   auth: null,

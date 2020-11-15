@@ -14,8 +14,8 @@ const FavouriteList = ({ User, Favourites, auth, loadFavourites }) => {
   if (!Favourites)
     return <h2 className='section-title'>No Favourites to display</h2>
   return (
-    <>
-      <section className='section'>
+    
+      <section className='section height bg-1'>
         <div className='main'>
           <h1 className='my-3'>Your Favourites</h1>
           <div />
@@ -27,7 +27,7 @@ const FavouriteList = ({ User, Favourites, auth, loadFavourites }) => {
                 <div className='card' key={house.id}>
                   <img
                     className='card-img-top'
-                    src={`${process.env.REACT_APP_SERVER_BLOB_PATH}${house.img_url}`}
+                    src={house.img_url}
                     alt='house'
                   />
                   <div className='card-body'>
@@ -36,7 +36,7 @@ const FavouriteList = ({ User, Favourites, auth, loadFavourites }) => {
                   </div>
                   <div className='card-footer'>
                     <Link
-                      to='/house-list'
+                      to={`/house/${house.id}`}
                       className='btn li-color btn-details btn-success'
                     >
                       Details
@@ -48,7 +48,7 @@ const FavouriteList = ({ User, Favourites, auth, loadFavourites }) => {
           </div>
         </div>
       </section>
-    </>
+    
   )
 }
 FavouriteList.defaultProps = {

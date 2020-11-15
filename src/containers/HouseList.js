@@ -21,7 +21,7 @@ const HouseList = ({ auth, Houses, loadHouses }) => {
   }
   return (
     <>
-      <section className='section'>
+      <section className='section bg-1'>
         <div className='main'>
           <h1 className='my-3'>Our houses</h1>
           <div />
@@ -33,20 +33,21 @@ const HouseList = ({ auth, Houses, loadHouses }) => {
                 <div className='card' key={house.id}>
                   <img
                     className='card-img-top'
-                    src={`${process.env.REACT_APP_SERVER_BLOB_PATH}${house.img_url}`}
+                    src={house.img_url}
                     alt='house'
                   />
                   <div className='card-body'>
-                    <h5 className='card-title'>{house.name}</h5>
-                    
+                    <h5 className='card-title text-center'>{house.name}</h5>
                   </div>
-                  <div className='card-footer'>
-                    <Link
-                      to={`/house/${house.id}`}
-                      className='btn li-color btn-details btn-success'
-                    >
-                      Details
-                    </Link>
+                  <div className='card-footer btn'>
+                    <button className='btn-success px-3'>
+                      <Link
+                        to={`/house/${house.id}`}
+                        className='btn li-color btn-details text-center px-4'
+                      >
+                        Details
+                      </Link>
+                    </button>
                   </div>
                 </div>
               </div>
