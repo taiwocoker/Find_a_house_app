@@ -11,7 +11,7 @@ An App where you can view and add favourite houses to a list.
 
 ## About this project
 
-This Application is built as a front end app consuming a Ruby on Rails [API](https://arcane-scrubland-62933.herokuapp.com/) separately deployed to Heroku.
+This Application is built as a front end app consuming a Ruby on Rails [API](https://arcane-scrubland-62933.herokuapp.com/) separately deployed to Heroku. Authorization was from Auth0
 
 ## End Points
 
@@ -26,7 +26,7 @@ GET
 ## Built With
 - ReactJs
 - React Hooks
-- Rails API
+- Auth0
 - Redux
 - Netlify (For deployment)
 - Jest
