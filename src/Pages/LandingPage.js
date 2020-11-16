@@ -3,10 +3,12 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { loadUser } from '../actions/userAction';
-import setLoadingStatus from '../actions/loadingAction'
-import LoadingBar from '../components/loading'
+import setLoadingStatus from '../actions/loadingAction';
+import LoadingBar from '../components/loading';
 
-const LandingPage = ({ auth, loadUser, User, Loading, setLoadingStatus }) => {
+const LandingPage = ({
+  auth, loadUser, User, Loading, setLoadingStatus,
+}) => {
   const loadUserProfile = () => {
     let body;
     const token = auth.getAccessToken();
@@ -22,7 +24,7 @@ const LandingPage = ({ auth, loadUser, User, Loading, setLoadingStatus }) => {
   React.useEffect(() => {
     if (auth.isAuthenticated() && (Object.keys(User).length === 0 && User.constructor === Object)) {
       loadUserProfile();
-      setLoadingStatus(false)
+      setLoadingStatus(false);
     }
   }, []);
 
@@ -53,7 +55,7 @@ LandingPage.propTypes = {
   loadUser: PropTypes.func.isRequired,
   Loading: PropTypes.bool.isRequired,
   setLoadingStatus: PropTypes.func.isRequired,
-}
+};
 const mapStateToProps = ({ User, Loading }) => ({ User, Loading });
 const mapDispatchToProps = { loadUser, setLoadingStatus };
 export default connect(mapStateToProps, mapDispatchToProps)(LandingPage);

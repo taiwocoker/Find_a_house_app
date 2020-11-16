@@ -1,9 +1,10 @@
-import HouseReducer from '../../Reducer/houseReducer'
-import * as HouseActions from '../../actions/houseAction'
+import HouseReducer from '../../Reducer/houseReducer';
+import * as HouseActions from '../../actions/houseAction';
+
 describe('House Reducer', () => {
   it('should update redux state house when passed SET_HOUSE', () => {
     // arrange
-    const initialState = {}
+    const initialState = {};
     const house = {
       id: 2,
       img_url:
@@ -11,11 +12,11 @@ describe('House Reducer', () => {
       name: 'Mill House',
       description:
         'Settled at the village of Firostefani, the all-white Mill Houses Elegant Suites features a swimming pool and offers rooms with verandas overlooking the building.',
-    }
-    const action = HouseActions.loadHouseSuccess(house)
+    };
+    const action = HouseActions.loadHouseSuccess(house);
     // act
-    const newState = HouseReducer(initialState, action)
+    const newState = HouseReducer(initialState, action);
     // assert
-    expect(newState).toEqual(house)
-  })
-})
+    expect(newState).toEqual(house);
+  });
+});

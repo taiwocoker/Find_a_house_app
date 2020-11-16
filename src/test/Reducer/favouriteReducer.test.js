@@ -1,9 +1,10 @@
-import FavouritesReducer from '../../Reducer/favouriteReducer'
-import * as FavouritesActions from '../../actions/favouriteAction'
+import FavouritesReducer from '../../Reducer/favouriteReducer';
+import * as FavouritesActions from '../../actions/favouriteAction';
+
 describe('Favourites Reducer', () => {
   it('should update redux state favourite when passed SET_FAVOURITE', () => {
     // arrange
-    const initialState = []
+    const initialState = [];
     const house = {
       id: 2,
       img_url:
@@ -11,13 +12,13 @@ describe('Favourites Reducer', () => {
       name: 'Mill House',
       description:
         'Settled at the village of Firostefani, the all-white Mill Houses Elegant Suites features a swimming pool and offers rooms with verandas overlooking the building.',
-    }
-    const favourite = [house]
-    const action = FavouritesActions.loadFavouritesSuccess(favourite)
+    };
+    const favourite = [house];
+    const action = FavouritesActions.loadFavouritesSuccess(favourite);
     // act
-    const newState = FavouritesReducer(initialState, action)
+    const newState = FavouritesReducer(initialState, action);
     // assert
-    expect(newState.length).toEqual(1)
-    expect(newState[0]).toEqual(house)
-  })
-})
+    expect(newState.length).toEqual(1);
+    expect(newState[0]).toEqual(house);
+  });
+});

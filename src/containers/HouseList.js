@@ -3,25 +3,28 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { loadHouses } from '../actions/housesAction';
-import setLoadingStatus from '../actions/loadingAction'
-import LoadingBar from '../components/loading'
+import setLoadingStatus from '../actions/loadingAction';
+import LoadingBar from '../components/loading';
 
-
-const HouseList = ({ auth, Houses, loadHouses, setLoadingStatus, Loading }) => {
+const HouseList = ({
+  auth, Houses, loadHouses, setLoadingStatus, Loading,
+}) => {
   const loadApplicationHouses = () => {
     const token = auth.getAccessToken();
     loadHouses(token);
   };
   React.useEffect(() => {
     if (Houses && Houses.length < 1) {
+      setLoadingStatus(true);
       loadApplicationHouses();
+      setLoadingStatus(false);
     }
   }, []);
-  if (Loading) return <LoadingBar />
+  if (Loading) return <LoadingBar />;
   if (!Houses) {
     return (
-      <h2 className='section-title'>No houses were found, kindly try again!</h2>
-    )
+      <h2 className="section-title">No houses were found, kindly try again!</h2>
+    );
   }
   return (
     <>
@@ -74,11 +77,11 @@ HouseList.propTypes = {
   loadHouses: PropTypes.func.isRequired,
   Loading: PropTypes.bool.isRequired,
   setLoadingStatus: PropTypes.func.isRequired,
-}
+};
 
 const mapStateToProps = ({ Houses, Loading }) => ({ Houses, Loading });
-const mapDispatchToProps = (dispatch) => ({
-  loadHouses: (token) => dispatch(loadHouses(token)),
-  setLoadingStatus: (status) => dispatch(setLoadingStatus(status)),
-})
+const mapDispatchToProps = dispatch => ({
+  loadHouses: token => dispatch(loadHouses(token)),
+  setLoadingStatus: status => dispatch(setLoadingStatus(status)),
+});
 export default connect(mapStateToProps, mapDispatchToProps)(HouseList);

@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'jquery/dist/jquery.min';
 import 'bootstrap/dist/js/bootstrap.min';
 import App from './components/App';
-import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 
 const initialState = {
   Houses: [],

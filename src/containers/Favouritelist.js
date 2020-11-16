@@ -3,39 +3,42 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { loadFavourites } from '../actions/favouriteAction';
-import setLoadingStatus from '../actions/loadingAction'
-import LoadingBar from '../components/loading'
+import setLoadingStatus from '../actions/loadingAction';
+import LoadingBar from '../components/loading';
 
 const FavouriteList = ({
-  User, Favourites, auth, loadFavourites, Loading, setLoadingStatus
+  User, Favourites, auth, loadFavourites, Loading, setLoadingStatus,
 }) => {
   const loadUserFavourites = () => {
     const token = auth.getAccessToken();
     loadFavourites(User.id, token);
   };
   React.useEffect(() => {
+    setLoadingStatus(true);
     loadUserFavourites();
+    setLoadingStatus(false);
   }, []);
-  if (Loading) return <LoadingBar />
-  if (!Loading && !Favourites)
+  if (Loading) return <LoadingBar />;
+  if (!Loading && !Favourites) {
     return (
-      <h2 className='section-title'>
+      <h2 className="section-title">
         No Favourites to display kindly try again!
       </h2>
-    )
+    );
+  }
   if (Favourites && Favourites.length < 1) {
     return (
-      <main className='bg-image'>
-        <section className='banner'>
+      <main className="bg-image">
+        <section className="banner">
           <h1>You have no Favourites</h1>
           <div />
           <p>Click link below to add Favourites</p>
-          <Link to='/house-list' className='li-color p-4 lin'>
+          <Link to="/house-list" className="li-color p-4 lin">
             Our Houses
           </Link>
         </section>
       </main>
-    )
+    );
   }
   return (
     <section className="section height bg-1">
@@ -81,7 +84,7 @@ FavouriteList.propTypes = {
   loadFavourites: PropTypes.func.isRequired,
   Loading: PropTypes.bool.isRequired,
   setLoadingStatus: PropTypes.func.isRequired,
-}
-const mapStateToProps = ({ Favourites, User,Loading }) => ({ Favourites, User, Loading });
+};
+const mapStateToProps = ({ Favourites, User, Loading }) => ({ Favourites, User, Loading });
 const mapDispatchToProps = { loadFavourites, setLoadingStatus };
 export default connect(mapStateToProps, mapDispatchToProps)(FavouriteList);
