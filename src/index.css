@@ -27,10 +27,14 @@ body {
 }
 
 .spin {
-  margin: auto auto;
+  margin: 1.2rem auto;
   display: inline-block;
   min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .height {
   min-height: 100vh;
 }

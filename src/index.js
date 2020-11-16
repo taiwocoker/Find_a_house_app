@@ -17,7 +17,7 @@ const initialState = {
   Loading: false,
   House: {},
   User: {},
-  Favourites: [],
+  Favourites: null,
 };
 
 const store = createStore(rootReducer, initialState, applyMiddleware(thunk));
