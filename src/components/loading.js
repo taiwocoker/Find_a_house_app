@@ -2,7 +2,8 @@ import React from 'react'
 import Loader from 'react-loader-spinner'
 
 const Loading = () => (
-  <Loader
+  <Loader 
+    className='spin bg-1'
     type='Puff'
     color='#00BFFF'
     height={100}

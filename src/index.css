@@ -26,6 +26,11 @@ body {
   background-color: lavender;
 }
 
+.spin {
+  margin: auto auto;
+  display: inline-block;
+  min-height: 100vh;
+}
 .height {
   min-height: 100vh;
 }
