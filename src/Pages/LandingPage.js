@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { loadUser } from '../actions/userAction';
@@ -24,18 +24,18 @@ const LandingPage = ({ auth, loadUser, User }) => {
   }, []);
   return (
     <>
-      <main className='bg-image'>
-        <section className='banner'>
+      <main className="bg-image">
+        <section className="banner">
           <h1>Find your beautiful houses here</h1>
           <div />
           <p>A place to live!</p>
-          <Link to='/house-list' className='li-color p-4 lin'>
+          <Link to="/house-list" className="li-color p-4 lin">
             Check out our houses!
           </Link>
         </section>
       </main>
     </>
-  )
+  );
 };
 LandingPage.defaultProps = {
   auth: null,
