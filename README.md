@@ -1,61 +1,54 @@
-# FIND A HOUSE
+# Find Your House
 
-In this app you can find a list of houses you like and have your favorites with a click. Built with Ruby on Rails, React, Bootstrap and Redux.
+An App where you can view and add favourite houses to a list.
 
+# Home Page
+![screenshot](./snapshot2.PNG)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Link to API Repository
-[Find a House API](https://github.com/taiwocoker/find-a-house-API)
-
-
-
-## Nice to have requirements
-
-- Implement proper user authentication from the front-end to the server
-- Create a user table in your database, so that a given user could only access the measurements they entered
-- Create an admin panel to create / update / delete things to measure
-- Make the app responsive, creating both tablet and desktop versions, following design guidelines
-- Make the app responsive, creating both tablet and desktop versions, following design guidelines
-- You could implement transitions to make user experience better
-- You can implement the monthly report page or total income
-- You can implement the user chat
-
-## What it does?
-- When the App is executed, you will be able to:
-
- - Login or signup as a new user;
- - The user is presented with a list of houses: apartment, house, room, etc.
- - When a user selects a house, detailed information about the house is presented and the possibility add it to favourites
- - The user can access a list of favourite apartments
+# List of Houses
+![screenshot](./snapshot1.PNG)
 
 
-## Built with
-- React
-- Ruby on Rails
-- JavaScript/ES6
+## About this project
+
+- This Application is built as a front end app consuming a Ruby on Rails [API](https://arcane-scrubland-62933.herokuapp.com/) separately deployed to Heroku. Authorization was from Auth0
+
+## End Points
+
+POST
+- /users - (create user account)
+- /favourites - (create favourites)
+
+GET
+- /houses - (fetch all houses)
+- /favourites - (fetch favourite houses)
+
+## Built With
+- ReactJs
 - React Hooks
-- React Router
+- Auth0
 - Redux
-- Boostrap
-- React Redux
-- Netlify
-- Heroku
+- Netlify (For deployment)
+- Jest
+- CSS (Modules)
+- HTML
+- Webpack
+- ES6 JavaScript.
 
+## Live Demo
+- For the full working application click [here](https://find-your-house.netlify.app/)
 
-
-### Prerequisites
-
-- Node
-- Npm
+## Installation
+- To get a local copy up and running follow these simple example steps.
 
 ### Setup
+-  Clone [this](https://github.com/taiwocoker/Find_a_house_app) repo
 
-- git clone `https://github.com/taiwocoker/Find_a_house_app.git`
-- cd Series_tracker_app
-- run npm install
-- run npm run start
-
+### Follow:
+1. cd into the project directory
+2. run npm install
+3. run npm start
+4. Navigate to localhost:3000
 
 ## Author
 
@@ -67,16 +60,17 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!
+- Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/taiwocoker/Find_a_house_app/issues).
+- Feel free to check the [issues page](https://github.com/taiwocoker/Find_a_house_app/issues)
 
 ## Show your support
 
-Give a ⭐️ if you like this project!
+- Give a ⭐️ if you like this project!
 
 ## Acknowledgments
+- Microverse
 
-- MIcroverse
-- Microverse TSE's
+- You can access all the design info (color, typography, layouts) in this [link](https://www.behance.net/gallery/37706679/Circle-(Landing-page-Dashboard-Mobile-App))
 
+- Design idea by [Alexey savitskiy on Behance](https://www.behance.net/alexey_savitskiy)
